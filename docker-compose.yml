@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    container_name: node-app
+    build: ./
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3000:3000
+      - 9229:9229
+    environment:
+      - NODE_ENV=local
+      - PORT=3000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6739
+      - REDIS-URL=redis://cache
+    depends_on:
+      - redis
+    command:
+      sh -c 'npm i && npm start'
+
+  redis:
+    image: redis
+    container_name: cache
+    ports:
+      - 6379:6379
+

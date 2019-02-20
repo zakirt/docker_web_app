@@ -1,0 +1,26 @@
+{
+    "name": "docker_web_app",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "main": "server.js",
+    "repository": "github.com:zakirt/docker_web_app.git",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "node --inspect=0.0.0.0:9229 ./server.js"
+    },
+    "keywords": [
+        "docker",
+        "node"
+    ],
+    "author": "Zakir Tariverdiev",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.16.4",
+        "redis": "^2.8.0"
+    },
+    "devDependencies": {
+        "eslint": "^5.14.1",
+        "eslint-config-google": "^0.12.0"
+    }
+}
