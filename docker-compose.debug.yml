@@ -11,7 +11,8 @@ services:
       - 9229:9229
     environment:
       - NODE_ENV=local
-      - PORT=3000
+      - NODE_PORT=3000
+      - NODE_HOST=0.0.0.0
       - REDIS_HOST=cache
       - REDIS_PORT=6739
       - REDIS_URL=redis://cache
